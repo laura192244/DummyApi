@@ -32,6 +32,10 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast");
+app.MapGet("/", () =>
+{
+    return Results.Redirect("/weatherforecast");
+});
 
 app.Run();
 
